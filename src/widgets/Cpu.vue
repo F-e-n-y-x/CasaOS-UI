@@ -171,7 +171,7 @@ export default {
 			this.cpuSeries = cpu.percent;
 			this.pushPower(cpu.power);
 			this.orgTemperature = cpu.temperature == undefined ? 0 : cpu.temperature;
-			if (this.powerList.length == 2 && cpu.model === "intel") {
+			if (this.powerList.length == 2 && (cpu.model === "intel" || cpu.model === "amd")) {
 				this.power =
 					(
 						(this.powerList[1].value - this.powerList[0].value) /
